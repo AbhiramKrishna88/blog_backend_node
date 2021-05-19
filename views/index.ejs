@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+</head>
+<body>
+	<div class="container">
+		<h1 class="mb-4">This is index</h1>
+		<a href="/articles/new" class="btn btn-success">New Article</a>
+		
+		<% articles.forEach(article =>{%>
+		<div class="card mt-4 text-decoration-none">
+				<div class="card-body">
+					<h4 class="card-title"><%= article.title %></h4>
+					<div class="card-subtitle text-muted mb-2">
+						<%= article.date%>
+					</div>
+					<div class="card-text text-muted mb-2">
+						<%= article.description %>
+					</div>
+				</div>
+				<div class="d-flex px-3 pb-3">
+				<a href="articles/<%= article._id %>" class="btn col-2 btn-primary">Read more</a>
+				<a href="articles/edit/<%= article._id %>" class="btn col-1 btn-info ml-3 ">Edit</a>
+				<form action="/articles/<%= article._id %>?_method=DELETE" method="POST" class="ml-3">
+					<button type="submit" class="btn btn-danger">Delete</button>
+				</form>
+				</div>
+		</div>
+		<%})%>
+	</div>
+</body>
+</html>

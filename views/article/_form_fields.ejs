@@ -1,0 +1,46 @@
+<div class="col-10 d-flex flex-column align-tems-center justify-content-center mx-auto">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Title</span>
+        </div>
+        <input type="text" class="form-control" placeholder="title" aria-label="title" aria-describedby="basic-addon1" value="<%= article.title %>" id="title" name="title">
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon2">Seo title</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Seo title" aria-label="seo_title" aria-describedby="basic-addon2" value="<%= article.seo_title %>" id="seo_title" name="seo_title">
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Descrition</span>
+        </div>
+        <textarea type="text" class="form-control" id="description" name="description" required>
+          <%= article.description %>
+        </textarea>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon4">Image url</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Image url" aria-label="img_url" aria-describedby="basic-addon4" value="<%= article.img_url %>" id="img_url" name="img_url">
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Markdown</span>
+        </div>
+        <textarea type="text" class="form-control" id="markdown" name="markdown" required>
+          <%= article.markdown %>
+        </textarea>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon5">Author</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Author" aria-label="author" aria-describedby="basic-addon5" value="<%= article.author %>" id="author" name="author">
+    </div>
+    <div class="d-inline-flex">
+        <a href="/" class="btn btn-secondary mr-4">Cancel</a>
+        <button class="btn btn-primary">Save</button>
+    </div>
+</div>
